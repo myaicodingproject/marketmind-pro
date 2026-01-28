@@ -34,39 +34,120 @@ MarketMind Pro transforms the $5,000+ institutional analyst experience into an a
 - **Mobile-Optimized** - Full reports readable on any device
 - **PDF Export** - Professional formatting preserved
 
-## Prerequisites
-
-- Python 3.11+
-- Node.js 18+
-- PostgreSQL 14+
-- Redis 6+
-- Docker and Docker Compose
-- Kiro CLI installed and authenticated
-
 ## Quick Start
 
-### 1. Clone and Setup
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+- **Python 3.11+** - [Download](https://www.python.org/downloads/)
+- **Node.js 18+** - [Download](https://nodejs.org/)
+- **Git** - [Download](https://git-scm.com/)
+
+### Option 1: Automated Setup (Recommended)
+
+**One-command installation** - Perfect for fresh installations:
+
 ```bash
-git clone https://github.com/username/marketmind-pro
+# Clone the repository
+git clone https://github.com/yourusername/marketmind-pro
+cd marketmind-pro
+
+# Run automated setup
+./setup.sh
+```
+
+The setup script will:
+- ✅ Check all prerequisites
+- ✅ Install Python dependencies
+- ✅ Install frontend dependencies
+- ✅ Build the React application
+- ✅ Create necessary directories
+- ✅ Verify installation
+
+**Time**: ~5 minutes (depending on internet speed)
+
+### Option 2: Manual Installation
+
+#### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/marketmind-pro
 cd marketmind-pro
 ```
 
-### 2. Environment Configuration
+#### 2. Install Python Dependencies
 ```bash
-cp .env.example .env
-# Edit .env with your API keys and database settings
+pip install fastapi uvicorn pydantic sqlalchemy redis matplotlib pillow reportlab
 ```
 
-### 3. One-Command Deployment
+#### 3. Install Frontend Dependencies
 ```bash
-# Start the complete system with monitoring
+cd frontend/react-app
+npm install
+npm run build
+cd ../..
+```
+
+### Starting the Application
+
+After installation (either method), start the application:
+
+```bash
 ./deploy_production.sh
 ```
 
-### 4. Access the Application
+The script will:
+- Start the backend server on port 8000
+- Start the frontend server on port 3000
+- Display real-time system monitoring
+
+### Access the Application
+
 - **Web Interface**: http://localhost:3000
 - **API Documentation**: http://localhost:8000/docs
-- **System Monitor**: Real-time progress in terminal
+- **Health Check**: http://localhost:8000/health
+
+### Quick Test (Demo Mode)
+
+1. Open http://localhost:3000 in your browser
+2. Enter **"DEMO"** as the ticker symbol
+3. Click **"Generate Report"**
+4. Wait 5-10 seconds for the demo report to load
+5. View the comprehensive 9-section report
+6. Click **"Download PDF"** to get the professional PDF with charts
+
+### Troubleshooting
+
+**Port already in use:**
+```bash
+# Stop existing processes
+pkill -f "complete_production_system"
+pkill -f "react_server"
+
+# Restart
+./deploy_production.sh
+```
+
+**Frontend not loading:**
+```bash
+cd frontend/react-app
+npm run build
+cd ../..
+./deploy_production.sh
+```
+
+**Python dependencies missing:**
+```bash
+pip install -r requirements.txt  # If requirements.txt exists
+# Or install individually:
+pip install fastapi uvicorn pydantic sqlalchemy redis matplotlib pillow reportlab
+```
+
+### System Requirements
+
+- **RAM**: 2GB minimum, 4GB recommended
+- **Disk Space**: 500MB for application + dependencies
+- **OS**: Linux, macOS, or Windows (WSL recommended for Windows)
+- **Network**: Internet connection for initial setup
 
 ## Architecture & Codebase Overview
 

@@ -121,15 +121,15 @@ def load_demo_data() -> Dict[str, Any]:
 
 
 async def simulate_demo_progress(report_id: str):
-    """Simulate realistic progress updates for demo mode"""
+    """Simulate realistic progress updates for demo mode - slower for demo video"""
     stages = [
-        (0, "initializing", 5, "🚀 Initializing MarketMind Pro analysis...", []),
-        (1, "data_collection", 15, "📊 Gathering financial data for Broadcom Inc...", ["executive_summary"]),
-        (2, "executing_parallel_kiro_agents", 35, "🤖 Running 9 parallel AI agents...", ["company_history", "leadership"]),
-        (3, "polishing", 60, "✨ Polishing institutional-quality content...", ["business_model", "market_position", "competitive_advantages"]),
-        (2, "generating_charts", 80, "📈 Generating professional charts...", ["market_size", "financial_analysis"]),
-        (1, "finalizing", 95, "📄 Finalizing report and PDF...", ["valuation_analysis"]),
-        (0, "completed", 100, "✅ Demo report ready!", [])
+        (2, "initializing", 5, "🚀 Initializing MarketMind Pro analysis...", []),
+        (5, "data_collection", 20, "📊 Gathering financial data for Broadcom Inc...", ["executive_summary"]),
+        (5, "executing_parallel_kiro_agents", 40, "🤖 Running 9 parallel AI agents...", ["company_history", "leadership"]),
+        (5, "polishing", 60, "✨ Polishing institutional-quality content...", ["business_model", "market_position"]),
+        (5, "generating_charts", 80, "📈 Generating professional charts...", ["competitive_advantages", "market_size", "financial_analysis"]),
+        (5, "finalizing", 95, "📄 Finalizing report and PDF...", ["valuation_analysis"]),
+        (2, "completed", 100, "✅ Demo report ready! Click 'View Report' to continue.", [])
     ]
     
     for delay, stage, progress, message, completed_sections in stages:

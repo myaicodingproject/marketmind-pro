@@ -105,7 +105,7 @@ const ProgressTracker = ({ reportId, onComplete, onError }) => {
             setCompletedReport(reportResponse.data);
             setIsCompleted(true);
             setProgress(100);
-            if (onComplete) onComplete(reportResponse.data);
+            // Don't auto-call onComplete - wait for user to click "View Report"
           } catch (error) {
             console.error('Failed to fetch completed report:', error);
             setIsCompleted(true);
@@ -147,73 +147,9 @@ const ProgressTracker = ({ reportId, onComplete, onError }) => {
     window.location.reload();
   };
 
-  // If completed, show completion screen
-  if (isCompleted && completedReport) {
-    return (
-      <div className="space-y-8">
-        {/* Success Header */}
-        <div className="text-center">
-          <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="text-3xl">🎉</span>
-          </div>
-          <h3 className="text-2xl font-bold text-white mb-2">Report Generated Successfully!</h3>
-          <p className="text-gray-400">Your institutional-quality research report is ready</p>
-        </div>
-
-        {/* Report Summary */}
-        <div className="bg-gray-800 rounded-2xl border border-gray-700 p-6">
-          <h4 className="text-lg font-semibold text-white mb-4">Report Summary</h4>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-gray-900 rounded-xl p-4">
-              <div className="text-sm text-gray-400">Ticker</div>
-              <div className="text-xl font-bold text-white">{completedReport.ticker}</div>
-            </div>
-            <div className="bg-gray-900 rounded-xl p-4">
-              <div className="text-sm text-gray-400">Generation Time</div>
-              <div className="text-xl font-bold text-green-400">{formatTime(elapsedTime)}</div>
-            </div>
-            <div className="bg-gray-900 rounded-xl p-4">
-              <div className="text-sm text-gray-400">Total Sections</div>
-              <div className="text-xl font-bold text-white">{completedReport.statistics?.total_sections || 0}</div>
-            </div>
-            <div className="bg-gray-900 rounded-xl p-4">
-              <div className="text-sm text-gray-400">Total Words</div>
-              <div className="text-xl font-bold text-white">{completedReport.statistics?.total_words?.toLocaleString() || 0}</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="space-y-4">
-          <button
-            onClick={handleViewReport}
-            className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 hover:from-blue-700 hover:via-purple-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 text-lg shadow-2xl transform hover:scale-[1.02] active:scale-[0.98]"
-          >
-            📊 View Full Report
-          </button>
-          
-          <div className="grid grid-cols-2 gap-4">
-            {completedReport.pdf_filename && (
-              <a
-                href={`${API_BASE}/api/v1/reports/${reportId}/pdf`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300 text-center"
-              >
-                📄 Download PDF
-              </a>
-            )}
-            <button
-              onClick={handleGenerateAnother}
-              className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300"
-            >
-              🔄 Generate Another
-            </button>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  const handleViewReportNewTab = () => {
+    window.open(`/report/${reportId}`, '_blank');
+  };
 
   // Map backend stages to user-friendly display
   const getCurrentStage = () => {
@@ -233,11 +169,15 @@ const ProgressTracker = ({ reportId, onComplete, onError }) => {
     <div className="space-y-8">
       {/* Header */}
       <div className="text-center">
-        <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
-          <span className="text-3xl">🧠</span>
+        <div className={`w-20 h-20 bg-gradient-to-br ${isCompleted ? 'from-green-500 to-blue-600' : 'from-blue-500 to-purple-600 animate-pulse'} rounded-full flex items-center justify-center mx-auto mb-4`}>
+          <span className="text-3xl">{isCompleted ? '✅' : '🧠'}</span>
         </div>
-        <h3 className="text-2xl font-bold text-white mb-2">AI Research in Progress</h3>
-        <p className="text-gray-400">Generating institutional-quality analysis...</p>
+        <h3 className="text-2xl font-bold text-white mb-2">
+          {isCompleted ? 'Report Complete!' : 'AI Research in Progress'}
+        </h3>
+        <p className="text-gray-400">
+          {isCompleted ? 'Your institutional-quality research report is ready' : 'Generating institutional-quality analysis...'}
+        </p>
       </div>
 
       {/* Progress Ring */}
@@ -264,6 +204,7 @@ const ProgressTracker = ({ reportId, onComplete, onError }) => {
               strokeDashoffset={`${2 * Math.PI * 45 * (1 - progress / 100)}`}
               className="text-blue-500 transition-all duration-1000 ease-out"
               strokeLinecap="round"
+              transform="rotate(-90 50 50)"
             />
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
@@ -341,6 +282,25 @@ const ProgressTracker = ({ reportId, onComplete, onError }) => {
           </div>
         )}
       </div>
+
+      {/* Action Buttons - Show when completed */}
+      {isCompleted && completedReport && (
+        <div className="space-y-4 mt-8">
+          <button
+            onClick={handleViewReportNewTab}
+            className="w-full bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 hover:from-blue-700 hover:via-purple-700 hover:to-blue-800 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 text-lg shadow-2xl transform hover:scale-[1.02] active:scale-[0.98]"
+          >
+            📊 View Report (New Tab)
+          </button>
+          
+          <button
+            onClick={handleGenerateAnother}
+            className="w-full bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-xl transition-all duration-300"
+          >
+            🔄 Generate Another Report
+          </button>
+        </div>
+      )}
     </div>
   );
 };

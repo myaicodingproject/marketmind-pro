@@ -1,0 +1,209 @@
+/* Professional Financial Report Styles - PDF Optimized */
+
+/* Print and Page Setup */
+@page {
+  size: A4;
+  margin: 0.75in 1in;
+  @top-center { content: "MarketMind Pro Research Report"; }
+  @bottom-right { content: "Page " counter(page); }
+}
+
+@media print {
+  * { -webkit-print-color-adjust: exact !important; color-adjust: exact !important; }
+  body { font-size: 11pt; line-height: 1.4; }
+}
+
+/* Corporate Color Scheme */
+:root {
+  --primary-blue: #1e3a8a;
+  --secondary-blue: #3b82f6;
+  --accent-gold: #f59e0b;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --border-light: #e5e7eb;
+  --bg-light: #f9fafb;
+  --success-green: #059669;
+  --warning-red: #dc2626;
+}
+
+/* Base Typography */
+body {
+  font-family: 'Times New Roman', serif;
+  color: var(--text-dark);
+  background: white;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 { font-family: 'Arial', sans-serif; font-weight: 600; }
+h1 { font-size: 24pt; color: var(--primary-blue); margin: 0 0 20pt; }
+h2 { font-size: 16pt; color: var(--primary-blue); margin: 20pt 0 12pt; border-bottom: 2pt solid var(--accent-gold); padding-bottom: 4pt; }
+h3 { font-size: 14pt; color: var(--text-dark); margin: 16pt 0 8pt; }
+h4 { font-size: 12pt; color: var(--text-dark); margin: 12pt 0 6pt; }
+
+/* Page Breaks */
+.page-break { page-break-before: always; }
+.no-break { page-break-inside: avoid; }
+.section { page-break-inside: avoid; margin-bottom: 20pt; }
+
+/* Header and Executive Summary */
+.report-header {
+  text-align: center;
+  border-bottom: 3pt solid var(--primary-blue);
+  padding-bottom: 20pt;
+  margin-bottom: 30pt;
+}
+
+.company-name { font-size: 28pt; font-weight: bold; color: var(--primary-blue); }
+.ticker-symbol { font-size: 18pt; color: var(--text-light); margin-top: 5pt; }
+.report-date { font-size: 11pt; color: var(--text-light); margin-top: 10pt; }
+
+.executive-summary {
+  background: var(--bg-light);
+  border-left: 4pt solid var(--accent-gold);
+  padding: 15pt;
+  margin: 20pt 0;
+}
+
+/* Financial Tables */
+.financial-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15pt 0;
+  font-size: 10pt;
+}
+
+.financial-table th {
+  background: var(--primary-blue);
+  color: white;
+  padding: 8pt;
+  text-align: center;
+  font-weight: bold;
+}
+
+.financial-table td {
+  padding: 6pt 8pt;
+  border-bottom: 1pt solid var(--border-light);
+  text-align: right;
+}
+
+.financial-table .metric-name { text-align: left; font-weight: 500; }
+.financial-table .total-row { border-top: 2pt solid var(--text-dark); font-weight: bold; }
+
+/* Key Metrics Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15pt;
+  margin: 20pt 0;
+}
+
+.metric-card {
+  border: 1pt solid var(--border-light);
+  padding: 12pt;
+  text-align: center;
+  background: white;
+}
+
+.metric-value { font-size: 18pt; font-weight: bold; color: var(--primary-blue); }
+.metric-label { font-size: 10pt; color: var(--text-light); margin-top: 4pt; }
+
+/* Price Target and Rating */
+.price-target {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  color: white;
+  padding: 15pt;
+  text-align: center;
+  margin: 20pt 0;
+}
+
+.target-price { font-size: 32pt; font-weight: bold; }
+.current-price { font-size: 14pt; opacity: 0.9; }
+.rating { font-size: 16pt; font-weight: bold; margin-top: 8pt; }
+
+.rating.buy { color: var(--success-green); }
+.rating.hold { color: var(--accent-gold); }
+.rating.sell { color: var(--warning-red); }
+
+/* Charts and Visualizations */
+.chart-container {
+  margin: 20pt 0;
+  text-align: center;
+  page-break-inside: avoid;
+}
+
+.chart-title { font-size: 12pt; font-weight: bold; margin-bottom: 10pt; }
+.chart-image { max-width: 100%; height: auto; }
+
+/* Risk Assessment */
+.risk-matrix {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20pt;
+  margin: 20pt 0;
+}
+
+.risk-category {
+  border: 1pt solid var(--border-light);
+  padding: 12pt;
+}
+
+.risk-high { border-left: 4pt solid var(--warning-red); }
+.risk-medium { border-left: 4pt solid var(--accent-gold); }
+.risk-low { border-left: 4pt solid var(--success-green); }
+
+/* Valuation Summary */
+.valuation-methods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15pt;
+  margin: 20pt 0;
+}
+
+.valuation-method {
+  border: 1pt solid var(--border-light);
+  padding: 12pt;
+  background: var(--bg-light);
+}
+
+.method-name { font-weight: bold; color: var(--primary-blue); }
+.method-value { font-size: 16pt; font-weight: bold; margin: 8pt 0; }
+
+/* Peer Comparison */
+.peer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin: 15pt 0;
+}
+
+.peer-table th { background: var(--secondary-blue); color: white; padding: 6pt; }
+.peer-table td { padding: 4pt 6pt; border-bottom: 1pt solid var(--border-light); }
+.peer-table .company-row { background: var(--accent-gold); color: white; font-weight: bold; }
+
+/* Footer */
+.report-footer {
+  border-top: 2pt solid var(--primary-blue);
+  padding-top: 15pt;
+  margin-top: 30pt;
+  font-size: 9pt;
+  color: var(--text-light);
+  text-align: center;
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.font-bold { font-weight: bold; }
+.text-primary { color: var(--primary-blue); }
+.text-success { color: var(--success-green); }
+.text-warning { color: var(--warning-red); }
+.mb-20 { margin-bottom: 20pt; }
+.mt-20 { margin-top: 20pt; }
+
+/* Responsive adjustments for screen viewing */
+@media screen and (max-width: 768px) {
+  .metrics-grid { grid-template-columns: 1fr; }
+  .risk-matrix { grid-template-columns: 1fr; }
+  .valuation-methods { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,11 @@
+{
+  "ticker": "GOOGL",
+  "generated_at": "2026-01-25T23:31:02.107728",
+  "charts_generated": [
+    "dcf_waterfall",
+    "sensitivity_analysis",
+    "peer_multiples"
+  ],
+  "chart_count": 3,
+  "status": "success"
+}

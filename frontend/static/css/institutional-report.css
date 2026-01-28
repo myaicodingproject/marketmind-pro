@@ -1,0 +1,494 @@
+/* MarketMind Pro - Professional Institutional Report Styles */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background: #ffffff;
+    font-size: 11pt;
+}
+
+/* Typography Hierarchy */
+h1 { font-size: 24pt; font-weight: 700; margin-bottom: 16pt; }
+h2 { font-size: 18pt; font-weight: 600; margin-bottom: 12pt; }
+h3 { font-size: 14pt; font-weight: 600; margin-bottom: 8pt; }
+h4 { font-size: 12pt; font-weight: 600; margin-bottom: 6pt; }
+
+p { margin-bottom: 8pt; text-align: justify; }
+ul, ol { margin-bottom: 8pt; padding-left: 20pt; }
+li { margin-bottom: 4pt; }
+
+/* Page Layout */
+.report-container {
+    max-width: 8.5in;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.page-break {
+    page-break-before: always;
+    height: 0;
+}
+
+/* Cover Page */
+.cover-page {
+    height: 11in;
+    padding: 1in;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+}
+
+.header {
+    margin-bottom: 2in;
+}
+
+.logo {
+    font-size: 36pt;
+    font-weight: 800;
+    letter-spacing: -1pt;
+    margin-bottom: 8pt;
+}
+
+.tagline {
+    font-size: 14pt;
+    font-weight: 300;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+.cover-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.report-title {
+    font-size: 32pt;
+    font-weight: 700;
+    margin-bottom: 16pt;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.report-subtitle {
+    font-size: 16pt;
+    font-weight: 400;
+    margin-bottom: 8pt;
+    opacity: 0.9;
+}
+
+.company-name {
+    font-size: 18pt;
+    font-weight: 500;
+    margin-bottom: 32pt;
+}
+
+.key-metrics-summary {
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 24pt;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.metric-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12pt;
+    padding: 8pt 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.metric-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.metric-label {
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.metric-value {
+    font-weight: 700;
+    font-size: 12pt;
+}
+
+.recommendation {
+    padding: 4pt 12pt;
+    border-radius: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 10pt;
+    letter-spacing: 0.5pt;
+}
+
+.recommendation-buy {
+    background: #27ae60;
+    color: white;
+}
+
+.recommendation-sell {
+    background: #e74c3c;
+    color: white;
+}
+
+.recommendation-hold {
+    background: #f39c12;
+    color: white;
+}
+
+.cover-footer {
+    text-align: center;
+    opacity: 0.8;
+}
+
+.generated-date {
+    font-size: 12pt;
+    margin-bottom: 8pt;
+}
+
+.disclaimer {
+    font-size: 9pt;
+    font-style: italic;
+}
+
+/* Table of Contents */
+.toc-page {
+    padding: 1in;
+    min-height: 9in;
+}
+
+.toc-page h2 {
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 8pt;
+    margin-bottom: 24pt;
+}
+
+.toc-list {
+    margin-top: 24pt;
+}
+
+.toc-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16pt;
+    padding: 8pt 0;
+}
+
+.toc-title {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.toc-dots {
+    flex: 1;
+    border-bottom: 1px dotted #bdc3c7;
+    margin: 0 12pt;
+    height: 1px;
+}
+
+.toc-page-num {
+    font-weight: 600;
+    color: #3498db;
+}
+
+/* Report Sections */
+.report-section {
+    padding: 1in;
+    min-height: 9in;
+}
+
+.section-header {
+    margin-bottom: 24pt;
+}
+
+.section-title {
+    color: #2c3e50;
+    font-size: 20pt;
+    font-weight: 700;
+    margin-bottom: 8pt;
+}
+
+.section-divider {
+    height: 3px;
+    background: linear-gradient(90deg, #3498db 0%, #9b59b6 100%);
+    border-radius: 2px;
+    margin-bottom: 16pt;
+}
+
+.section-content {
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Executive Summary Metrics */
+.executive-summary-metrics {
+    margin-bottom: 32pt;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200pt, 1fr));
+    gap: 16pt;
+    margin-bottom: 24pt;
+}
+
+.metric-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 16pt;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.metric-label {
+    font-size: 9pt;
+    font-weight: 600;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+    margin-bottom: 8pt;
+    display: block;
+}
+
+.metric-card .metric-value {
+    font-size: 16pt;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.price-target {
+    color: #27ae60;
+}
+
+/* Financial Analysis */
+.financial-analysis-section {
+    margin-bottom: 24pt;
+}
+
+.financial-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24pt;
+    font-size: 10pt;
+}
+
+.financial-table th {
+    background: #34495e;
+    color: white;
+    padding: 12pt;
+    text-align: left;
+    font-weight: 600;
+}
+
+.financial-table td {
+    padding: 10pt 12pt;
+    border-bottom: 1px solid #ecf0f1;
+}
+
+.financial-table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.financial-table tr:hover {
+    background: #e3f2fd;
+}
+
+.positive {
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.negative {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+.margins-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150pt, 1fr));
+    gap: 16pt;
+    margin-bottom: 24pt;
+}
+
+.margin-card {
+    background: white;
+    border: 2px solid #ecf0f1;
+    border-radius: 8px;
+    padding: 16pt;
+    text-align: center;
+}
+
+.margin-label {
+    font-size: 9pt;
+    font-weight: 600;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    margin-bottom: 8pt;
+}
+
+.margin-value {
+    font-size: 18pt;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+/* Subsections */
+.subsection {
+    margin-bottom: 24pt;
+    padding-left: 16pt;
+    border-left: 3px solid #3498db;
+}
+
+.subsection-title {
+    color: #34495e;
+    font-size: 14pt;
+    font-weight: 600;
+    margin-bottom: 12pt;
+}
+
+.subsection-content {
+    line-height: 1.6;
+}
+
+/* Growth Metrics */
+.growth-metrics {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 16pt;
+    margin-bottom: 16pt;
+}
+
+.growth-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8pt 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.growth-item:last-child {
+    border-bottom: none;
+}
+
+.growth-label {
+    font-weight: 500;
+    color: #495057;
+}
+
+.growth-value {
+    font-weight: 700;
+    font-size: 11pt;
+}
+
+/* Footer */
+.report-footer {
+    background: #2c3e50;
+    color: white;
+    padding: 24pt 1in;
+    margin-top: 32pt;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16pt;
+    padding-bottom: 16pt;
+    border-bottom: 1px solid #34495e;
+}
+
+.footer-left {
+    font-size: 12pt;
+}
+
+.footer-right {
+    font-size: 10pt;
+    opacity: 0.8;
+}
+
+.footer-disclaimer {
+    font-size: 8pt;
+    line-height: 1.4;
+    opacity: 0.7;
+    text-align: center;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        font-size: 10pt;
+    }
+    
+    .page-break {
+        page-break-before: always;
+    }
+    
+    .cover-page {
+        page-break-after: always;
+    }
+    
+    .toc-page {
+        page-break-after: always;
+    }
+    
+    .report-section {
+        page-break-inside: avoid;
+    }
+    
+    .metric-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .report-container {
+        max-width: 100%;
+        margin: 0;
+        box-shadow: none;
+    }
+    
+    .cover-page,
+    .toc-page,
+    .report-section {
+        padding: 16pt;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .margins-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 8pt;
+    }
+}

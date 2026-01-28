@@ -1,0 +1,155 @@
+{
+  "timestamp": "2026-01-26T08:43:37.858190",
+  "debug_log": [
+    {
+      "timestamp": "2026-01-26T08:42:44.505003",
+      "component": "OpenAI",
+      "message": "Environment check",
+      "data": {
+        "api_key_present": true,
+        "api_key_length": 164,
+        "model": "gpt-4o-mini"
+      }
+    },
+    {
+      "timestamp": "2026-01-26T08:42:47.199979",
+      "component": "OpenAI",
+      "message": "Connection test",
+      "data": {
+        "response_time": 2.1834046840667725,
+        "model_used": "gpt-4o-mini-2024-07-18",
+        "tokens_used": 14,
+        "response": "It seems like you might"
+      }
+    },
+    {
+      "timestamp": "2026-01-26T08:42:47.399552",
+      "component": "ContentEnhancement",
+      "message": "Input content",
+      "data": {
+        "content_length": 257,
+        "content_preview": "\n            Searching for symbols matching: \"generate_report\"\n            + 7: + 8: Alphabet Inc. (GOOGL) stands as the dominant force\n            > # Executive Summary\n            \u2022 Revenue: $339.7 ",
+        "issues_detected": {
+          "debug_messages": true,
+          "line_numbers": true,
+          "system_errors": true,
+          "markdown_headers": true
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-26T08:42:48.827439",
+      "component": "ContentEnhancement",
+      "message": "Enhancement results",
+      "data": {
+        "enhancement_time": 1.424894094467163,
+        "tokens_used": 144,
+        "issues_fixed": {
+          "debug_messages_removed": true,
+          "line_numbers_removed": true,
+          "system_errors_removed": true,
+          "markdown_headers_fixed": true,
+          "content_preserved": true
+        },
+        "enhanced_content_length": 103,
+        "enhanced_content": "# Executive Summary\n\n- **Revenue:** $339.7 billion\n\nAlphabet Inc. (GOOGL) stands as the dominant force."
+      }
+    },
+    {
+      "timestamp": "2026-01-26T08:42:55.674007",
+      "component": "PDFGeneration",
+      "message": "Fetching report data",
+      "data": {
+        "ticker": "GOOGL"
+      }
+    },
+    {
+      "timestamp": "2026-01-26T08:42:55.738508",
+      "component": "PDFGeneration",
+      "message": "Report data retrieved",
+      "data": {
+        "sections_count": 8,
+        "data_size": 335875,
+        "sections": [
+          "executive_summary",
+          "company_analysis",
+          "financial_analysis",
+          "valuation_analysis",
+          "risk_assessment",
+          "market_analysis",
+          "technical_analysis",
+          "investment_thesis"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-01-26T08:43:37.745868",
+      "component": "PDFGeneration",
+      "message": "PDF generated successfully",
+      "data": {
+        "generation_time": 41.22198510169983,
+        "pdf_path": "/mnt/c/kiro/GOOGL_Debug_Test.pdf",
+        "analysis": {
+          "total_pages": 142,
+          "file_size": 449168,
+          "first_page_length": 183,
+          "has_content": true,
+          "debug_artifacts": {
+            "searching_symbols": false,
+            "line_numbers": false,
+            "git_errors": false
+          }
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-26T08:43:37.780030",
+      "component": "SystemIntegration",
+      "message": "Backend health check",
+      "data": {
+        "status_code": 200,
+        "healthy": true,
+        "response": {
+          "status": "healthy",
+          "version": "4.0.0",
+          "production_features": {
+            "real_kiro_agents": "\u2705 Active",
+            "financial_data_integration": "\u2705 Active",
+            "pdf_generation": "\u2705 Active",
+            "websocket_progress": "\u2705 Active",
+            "quality_validation": "\u2705 Active"
+          },
+          "performance": {
+            "target_time": "8-10 minutes",
+            "quality_threshold": "80%",
+            "report_pages": 30,
+            "active_connections": 0
+          }
+        }
+      }
+    },
+    {
+      "timestamp": "2026-01-26T08:43:37.855522",
+      "component": "SystemIntegration",
+      "message": "API endpoints test",
+      "data": {
+        "/health": {
+          "status_code": 200,
+          "response_time": 0.029987,
+          "success": true
+        },
+        "/api/v1/reports/prod_report_GOOGL_1769350746": {
+          "status_code": 200,
+          "response_time": 0.032336,
+          "success": true
+        }
+      }
+    }
+  ],
+  "environment": {
+    "openai_api_key_present": true,
+    "openai_model": "gpt-4o-mini",
+    "python_version": "3.10.12 (main, Jan  8 2026, 06:52:19) [GCC 11.4.0]",
+    "working_directory": "/mnt/c/kiro"
+  }
+}

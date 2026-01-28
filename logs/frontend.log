@@ -1,0 +1,21 @@
+INFO:     Started server process [123938]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:3000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:47530 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47532 - "GET /report/prod_report_DEMO_1769580436 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47532 - "GET /assets/index-BlJL4a5k.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47538 - "GET /assets/index-ypK7TMTu.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58928 - "GET /report/prod_report_DEMO_1769580436 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58928 - "GET /assets/index-BlJL4a5k.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58938 - "GET /assets/index-ypK7TMTu.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51776 - "GET /report/prod_report_DEMO_1769580436 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51776 - "GET /assets/index-BlJL4a5k.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51790 - "GET /assets/index-ypK7TMTu.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48324 - "GET /report/prod_report_DEMO_1769578254 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48324 - "GET /assets/index-BlJL4a5k.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48338 - "GET /assets/index-ypK7TMTu.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48338 - "GET /vite.svg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42282 - "GET /report/prod_report_DEMO_1769580753 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42282 - "GET /assets/index-BlJL4a5k.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42284 - "GET /assets/index-ypK7TMTu.css HTTP/1.1" 200 OK

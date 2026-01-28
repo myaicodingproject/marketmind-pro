@@ -1,0 +1,67 @@
+# Node.js (143 directories causing slowness!)
+node_modules/
+frontend-react/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+coverage/
+
+# Cache directories
+.cache/
+.parcel-cache/
+.vscode/
+.idea/
+.pytest_cache/
+
+# Logs and temporary outputs
+*.log
+logs/
+test_output/
+pdf_generator/
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+*.pid
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+
+# Git (keep repo but ignore heavy objects)
+.git/objects/
+.git/logs/
+
+# Large media files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.pdf
+*.mp4
+*.mov
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment files
+.env.local
+.env.production

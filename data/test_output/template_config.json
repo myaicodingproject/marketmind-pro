@@ -1,0 +1,37 @@
+{
+  "template_engine": "handlebars",
+  "version": "2.0",
+  "created": "2026-01-25T23:30:27.553796",
+  "templates": {
+    "handlebars": {
+      "main": "stock_report.hbs",
+      "sections": [
+        "executive_summary.hbs",
+        "financial_analysis.hbs",
+        "company_overview.hbs",
+        "valuation_analysis.hbs",
+        "risk_assessment.hbs"
+      ]
+    },
+    "react": {
+      "main": "ReportTemplate.jsx",
+      "components": [
+        "CoverPage.jsx",
+        "ExecutiveSummary.jsx",
+        "FinancialAnalysis.jsx",
+        "CompanyOverview.jsx",
+        "ValuationAnalysis.jsx",
+        "RiskAssessment.jsx"
+      ]
+    }
+  },
+  "styles": [
+    "institutional-report.css"
+  ],
+  "supported_tickers": [
+    "GOOGL",
+    "AAPL",
+    "MSFT",
+    "default"
+  ]
+}

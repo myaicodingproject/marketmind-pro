@@ -1,0 +1,55 @@
+<div class="report-section">
+  <header class="section-header">
+    <h2>{{ section.title }}</h2>
+  </header>
+
+  <div class="section-content">
+    {{ section.content | safe }}
+  </div>
+
+  {% if section.metrics %}
+  <div class="metrics-grid">
+    {% for metric in section.metrics %}
+    <div class="metric-item">
+      <span class="metric-label">{{ metric.label }}</span>
+      <span class="metric-value">{{ metric.value }}</span>
+      {% if metric.unit %}<span class="metric-unit">{{ metric.unit }}</span>{% endif %}
+      {% if metric.change %}<span class="metric-change">{{ metric.change }}</span>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if section.tables %}
+  {% for table in section.tables %}
+  <table class="financial-table">
+    <thead>
+      <tr>
+        {% for header in table.headers %}
+        <th>{{ header }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in table.rows %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endfor %}
+  {% endif %}
+
+  {% if section.charts %}
+  {% for chart in section.charts %}
+  {% if format == 'web' %}
+  <div class="chart-placeholder" data-section="{{ section.title }}" data-chart="{{ chart.type }}"></div>
+  {% else %}
+  <img src="data:image/png;base64,{{ chart.data }}" alt="{{ chart.title }}" />
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+</div>

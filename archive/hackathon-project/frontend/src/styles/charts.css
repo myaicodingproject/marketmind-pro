@@ -1,0 +1,47 @@
+/* Financial Charts Print Styles */
+@media print {
+  .recharts-wrapper {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  .recharts-surface {
+    background: white !important;
+  }
+  
+  .recharts-cartesian-grid-horizontal line,
+  .recharts-cartesian-grid-vertical line {
+    stroke: #e5e7eb !important;
+    stroke-width: 1 !important;
+  }
+  
+  .recharts-text {
+    fill: #374151 !important;
+    font-size: 12px !important;
+  }
+  
+  .recharts-legend-item-text {
+    color: #374151 !important;
+  }
+  
+  /* Ensure chart containers maintain size */
+  .recharts-responsive-container {
+    min-height: 300px !important;
+  }
+  
+  /* Chart backgrounds */
+  .bg-white {
+    background-color: white !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  
+  /* Border styles for print */
+  .border {
+    border: 1px solid #d1d5db !important;
+  }
+  
+  .rounded-lg {
+    border-radius: 8px !important;
+  }
+}

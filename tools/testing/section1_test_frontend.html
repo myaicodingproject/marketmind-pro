@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarketMind Pro - Section 1 Agent Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .input-section {
+            margin-bottom: 30px;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        button {
+            padding: 12px 24px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        button:hover {
+            background: #1d4ed8;
+        }
+        button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+        }
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #6b7280;
+        }
+        .results {
+            margin-top: 30px;
+        }
+        .summary-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .recommendation {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .recommendation.buy { background: #dcfce7; color: #166534; }
+        .recommendation.hold { background: #fef3c7; color: #92400e; }
+        .recommendation.sell { background: #fee2e2; color: #991b1b; }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .metric {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+        }
+        .metric-label {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 5px;
+        }
+        .metric-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: #111827;
+        }
+        .thesis-list, .risk-list {
+            margin-top: 15px;
+        }
+        .thesis-list li, .risk-list li {
+            margin-bottom: 8px;
+            padding-left: 10px;
+        }
+        .error {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 MarketMind Pro</h1>
+            <h2>Section 1 Agent - Executive Summary Generator</h2>
+            <p>Generate institutional-grade executive summaries with investment recommendations</p>
+        </div>
+
+        <div class="input-section">
+            <div class="input-group">
+                <input type="text" id="tickerInput" placeholder="Enter stock ticker (e.g., AAPL, MSFT, GOOGL)" value="AAPL">
+                <button onclick="generateSummary()" id="generateBtn">Generate Summary</button>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" id="includeCharts" checked> Include Charts
+                </label>
+            </div>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <p>🔄 Generating executive summary... This may take 30-60 seconds.</p>
+        </div>
+
+        <div id="results" class="results" style="display: none;">
+            <!-- Results will be populated here -->
+        </div>
+
+        <div id="error" class="error" style="display: none;">
+            <!-- Error messages will be shown here -->
+        </div>
+    </div>
+
+    <script>
+        async function generateSummary() {
+            const ticker = document.getElementById('tickerInput').value.trim().toUpperCase();
+            const includeCharts = document.getElementById('includeCharts').checked;
+            
+            if (!ticker) {
+                alert('Please enter a stock ticker');
+                return;
+            }
+
+            // Show loading, hide results/error
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('generateBtn').disabled = true;
+
+            try {
+                const response = await fetch('http://localhost:8001/api/v1/section1/generate', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        ticker: ticker,
+                        include_charts: includeCharts
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success && data.data) {
+                    displayResults(data.data, data.charts);
+                } else {
+                    showError(data.error || 'Unknown error occurred');
+                }
+            } catch (error) {
+                showError(`Network error: ${error.message}`);
+            } finally {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('generateBtn').disabled = false;
+            }
+        }
+
+        function displayResults(summary, charts) {
+            const resultsDiv = document.getElementById('results');
+            
+            const recommendationClass = summary.recommendation.toLowerCase();
+            const upside = summary.upside_potential > 0 ? '+' : '';
+            
+            resultsDiv.innerHTML = `
+                <div class="summary-card">
+                    <h3>📊 Executive Summary - ${summary.ticker}</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div>
+                            <span class="recommendation ${recommendationClass}">${summary.recommendation}</span>
+                            <div style="margin-top: 10px;">
+                                <strong>Price Target:</strong> $${summary.price_target} 
+                                <span style="color: ${summary.upside_potential > 0 ? '#059669' : '#dc2626'};">
+                                    (${upside}${summary.upside_potential}%)
+                                </span>
+                            </div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div><strong>Current Price:</strong> $${summary.current_price}</div>
+                            <div><strong>Confidence:</strong> ${summary.confidence_level}</div>
+                        </div>
+                    </div>
+                    
+                    <div><strong>Sector:</strong> ${summary.sector} | <strong>Industry:</strong> ${summary.industry}</div>
+                </div>
+
+                <div class="summary-card">
+                    <h4>📈 Key Financial Metrics</h4>
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <div class="metric-label">Market Cap</div>
+                            <div class="metric-value">$${(summary.key_metrics.market_cap / 1e9).toFixed(1)}B</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">P/E Ratio</div>
+                            <div class="metric-value">${summary.key_metrics.pe_ratio.toFixed(1)}</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">ROE</div>
+                            <div class="metric-value">${(summary.key_metrics.roe * 100).toFixed(1)}%</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">Profit Margin</div>
+                            <div class="metric-value">${(summary.key_metrics.profit_margin * 100).toFixed(1)}%</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">52W High</div>
+                            <div class="metric-value">$${summary.key_metrics['52_week_range'].high}</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">52W Low</div>
+                            <div class="metric-value">$${summary.key_metrics['52_week_range'].low}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-card">
+                    <h4>💡 Investment Thesis</h4>
+                    <ul class="thesis-list">
+                        ${summary.investment_thesis.map(thesis => `<li>${thesis}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="summary-card">
+                    <h4>⚠️ Risk Factors</h4>
+                    <ul class="risk-list">
+                        ${summary.risk_factors.map(risk => `<li>${risk}</li>`).join('')}
+                    </ul>
+                </div>
+
+                <div class="summary-card">
+                    <h4>🏢 Business Overview</h4>
+                    <p>${summary.business_summary.substring(0, 500)}${summary.business_summary.length > 500 ? '...' : ''}</p>
+                </div>
+
+                <div class="summary-card">
+                    <h4>📊 Market Sentiment</h4>
+                    <p><strong>Current Sentiment:</strong> ${summary.market_sentiment.toUpperCase()}</p>
+                    <p><strong>Recent News Articles:</strong> ${summary.recent_news_count}</p>
+                    <p><strong>Valuation:</strong> ${summary.valuation_summary.current_valuation}</p>
+                </div>
+            `;
+            
+            resultsDiv.style.display = 'block';
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('error');
+            errorDiv.innerHTML = `<strong>Error:</strong> ${message}`;
+            errorDiv.style.display = 'block';
+        }
+
+        // Allow Enter key to trigger generation
+        document.getElementById('tickerInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                generateSummary();
+            }
+        });
+    </script>
+</body>
+</html>

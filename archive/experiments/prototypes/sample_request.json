@@ -1,0 +1,25 @@
+{
+  "symbol": "AAPL",
+  "analysis_data": {
+    "executive_summary": "Apple Inc. (AAPL) demonstrates strong fundamentals with consistent revenue growth and market leadership in consumer technology.\n\nRecommendation: BUY with a 12-month price target of $200.00\n\nKey Investment Thesis:\n• Strong ecosystem and brand loyalty driving recurring revenue\n• Expanding services segment with high margins\n• Innovation in emerging technologies (AR/VR, AI)\n• Robust balance sheet with significant cash reserves",
+    "financial_metrics": {
+      "revenue": 394328000000,
+      "net_income": 99803000000,
+      "eps": 6.16,
+      "pe_ratio": 28.5,
+      "price_target": 200.00,
+      "current_price": 175.50,
+      "market_cap": 2800000000000,
+      "debt_to_equity": 1.73,
+      "roe": 26.4,
+      "gross_margin": 43.3
+    },
+    "market_analysis": "The smartphone market continues to show resilience despite global economic headwinds. Apple maintains a premium position with strong pricing power.\n\nMarket Dynamics:\nApple's ecosystem approach creates significant switching costs for consumers. The company's focus on services revenue provides more predictable cash flows.\n\nCompetitive Position:\nApple maintains technological leadership in key areas including chip design, software integration, and user experience. The brand commands premium pricing across all product categories.",
+    "risk_assessment": "Risk: Regulatory scrutiny in key markets could impact App Store revenue streams.\n\nHigh risk factors include supply chain disruptions and geopolitical tensions affecting manufacturing operations.\n\nLow risk factors include strong brand loyalty and diversified revenue streams providing stability during market downturns.",
+    "valuation": "Price Target: $200.00 based on DCF analysis and peer comparison.\n\nFair Value: Our analysis suggests a fair value range of $185-205 per share.\n\nValuation Methodology:\n• DCF model assumes 8% revenue CAGR over next 5 years\n• P/E multiple of 25x applied to 2025E earnings\n• Sum-of-parts analysis values services segment at premium multiple"
+  },
+  "report_type": "institutional",
+  "output_format": "pdf",
+  "include_charts": true,
+  "include_tables": true
+}

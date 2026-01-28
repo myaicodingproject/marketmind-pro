@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/static/css/institutional-report.css">
+</head>
+<body>
+    <!-- Cover Page -->
+    <div class="cover-page">
+        <div class="header">
+            <div class="logo">MarketMind Pro</div>
+            <div class="tagline">The Mind Behind Smart Investing</div>
+        </div>
+        
+        <div class="cover-content">
+            <h1 class="report-title">{{ticker}} - Comprehensive Stock Analysis</h1>
+            <div class="report-subtitle">Institutional Investment Research Report</div>
+            <div class="company-name">{{company_name}}</div>
+            
+            {{#if sections.executive_summary.key_metrics}}
+            <div class="key-metrics-summary">
+                {{#with sections.executive_summary.key_metrics}}
+                {{#if recommendation}}
+                <div class="metric-item">
+                    <span class="metric-label">Recommendation:</span>
+                    <span class="recommendation recommendation-{{toLowerCase recommendation}}">{{recommendation}}</span>
+                </div>
+                {{/if}}
+                {{#if price_target}}
+                <div class="metric-item">
+                    <span class="metric-label">Price Target:</span>
+                    <span class="metric-value">{{price_target}}</span>
+                </div>
+                {{/if}}
+                {{#if current_price}}
+                <div class="metric-item">
+                    <span class="metric-label">Current Price:</span>
+                    <span class="metric-value">{{current_price}}</span>
+                </div>
+                {{/if}}
+                {{#if market_cap}}
+                <div class="metric-item">
+                    <span class="metric-label">Market Cap:</span>
+                    <span class="metric-value">{{market_cap}}</span>
+                </div>
+                {{/if}}
+                {{/with}}
+            </div>
+            {{/if}}
+        </div>
+        
+        <div class="cover-footer">
+            <div class="generated-date">Generated: {{generated_date}}</div>
+            <div class="disclaimer">This report is for institutional investment research purposes only.</div>
+        </div>
+    </div>
+    
+    <!-- Table of Contents -->
+    <div class="page-break"></div>
+    <div class="toc-page">
+        <h2>Table of Contents</h2>
+        <div class="toc-list">
+            {{#each sections}}
+            <div class="toc-item">
+                <span class="toc-title">{{@index}}. {{title}}</span>
+                <span class="toc-dots"></span>
+                <span class="toc-page">{{@index}}</span>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    
+    <!-- Report Sections -->
+    {{#each sections}}
+    <div class="page-break"></div>
+    <div class="report-section">
+        <div class="section-header">
+            <h2 class="section-title">{{title}}</h2>
+            <div class="section-divider"></div>
+        </div>
+        
+        {{#if (eq @key 'executive_summary')}}
+        {{#if key_metrics}}
+        <div class="executive-summary-metrics">
+            <div class="metrics-grid">
+                {{#if key_metrics.recommendation}}
+                <div class="metric-card">
+                    <div class="metric-label">Investment Recommendation</div>
+                    <div class="metric-value recommendation recommendation-{{toLowerCase key_metrics.recommendation}}">
+                        {{key_metrics.recommendation}}
+                    </div>
+                </div>
+                {{/if}}
+                {{#if key_metrics.price_target}}
+                <div class="metric-card">
+                    <div class="metric-label">12-Month Price Target</div>
+                    <div class="metric-value price-target">{{key_metrics.price_target}}</div>
+                </div>
+                {{/if}}
+                {{#if key_metrics.current_price}}
+                <div class="metric-card">
+                    <div class="metric-label">Current Price</div>
+                    <div class="metric-value">{{key_metrics.current_price}}</div>
+                </div>
+                {{/if}}
+                {{#if key_metrics.market_cap}}
+                <div class="metric-card">
+                    <div class="metric-label">Market Capitalization</div>
+                    <div class="metric-value">{{key_metrics.market_cap}}</div>
+                </div>
+                {{/if}}
+                {{#if key_metrics.pe_ratio}}
+                <div class="metric-card">
+                    <div class="metric-label">P/E Ratio</div>
+                    <div class="metric-value">{{key_metrics.pe_ratio}}</div>
+                </div>
+                {{/if}}
+                {{#if key_metrics.revenue_growth}}
+                <div class="metric-card">
+                    <div class="metric-label">Revenue Growth</div>
+                    <div class="metric-value">{{key_metrics.revenue_growth}}</div>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+        {{/if}}
+        {{/if}}
+        
+        <div class="section-content">
+            {{{content}}}
+        </div>
+        
+        {{#if subsections}}
+        {{#each subsections}}
+        <div class="subsection">
+            <h3 class="subsection-title">{{title}}</h3>
+            <div class="subsection-content">
+                {{{content}}}
+            </div>
+        </div>
+        {{/each}}
+        {{/if}}
+    </div>
+    {{/each}}
+    
+    <!-- Footer -->
+    <div class="report-footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <strong>MarketMind Pro</strong> - AI-Powered Stock Research Platform
+            </div>
+            <div class="footer-right">
+                Generated: {{generated_date}}
+            </div>
+        </div>
+        <div class="footer-disclaimer">
+            <p><strong>Important Disclaimer:</strong> This report is generated using AI analysis and is for informational purposes only. 
+            Past performance does not guarantee future results. Please consult with a qualified financial advisor before making investment decisions.</p>
+        </div>
+    </div>
+</body>
+</html>

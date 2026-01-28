@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ report.ticker }} - Stock Research Report | MarketMind Pro</title>
+    {% for css_file in css_files %}
+    {{ load_css(css_file) }}
+    {% endfor %}
+</head>
+<body>
+    {% if format == 'pdf' %}
+    <!-- Cover Page -->
+    <div class="cover-page">
+        <div class="brand-header">
+            <h1>MarketMind Pro</h1>
+            <p>The Mind Behind Smart Investing</p>
+        </div>
+        <div class="report-title">
+            <h2>{{ report.ticker }} Stock Research Report</h2>
+            <p class="report-date">{{ report.date }}</p>
+        </div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="table-of-contents">
+        <h2>Table of Contents</h2>
+        <ul>
+            {% for section in report.sections %}
+            <li><a href="#{{ section.id }}">{{ section.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Main Content -->
+    <main class="report-content">
+        {% for section in report.sections %}
+        {{ render_section(section, format) }}
+        {% endfor %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,73 @@
+#!/usr/bin/env python3
+"""Generate realistic AAPL demo data for DEMO mode"""
+import json
+from pathlib import Path
+
+# Minimal realistic AAPL data
+demo_data = {
+    "report_id": "PLACEHOLDER",
+    "ticker": "DEMO",
+    "company_name": "Apple Inc. (DEMO MODE)",
+    "generated_at": "PLACEHOLDER",
+    "status": "completed",
+    "quality_score": 94,
+    "sections": {
+        "executive_summary": {
+            "title": "Executive Summary",
+            "content": "**Investment Recommendation: BUY | Price Target: $200**\n\nApple Inc. (AAPL) - Market Cap: $2.9T | Current Price: $185\n\nKey Metrics: Revenue $394B | Net Income $97B | FCF $100B | Margins 30%+\n\nStrengths: Ecosystem lock-in, Services growth (22% revenue, 70% margins), Brand premium, $162B cash\n\nRisks: China exposure (19%), App Store regulation, iPhone dependence (52%)\n\nValuation: DCF $195 | Target $200 (8% upside)",
+            "charts": []
+        },
+        "company_history": {
+            "title": "Company History",
+            "content": "Founded 1976 by Jobs, Wozniak, Wayne. Key milestones: Apple II (1977), Mac (1984), iPod (2001), iPhone (2007), iPad (2010), Apple Watch (2014), Services expansion (2015+), Apple Silicon (2020), Vision Pro (2023). Tim Cook CEO since 2011. Revenue grew from $108B to $394B under Cook.",
+            "charts": []
+        },
+        "leadership_analysis": {
+            "title": "Leadership Analysis",
+            "content": "CEO Tim Cook (since 2011): Operations expert, grew market cap $350B→$2.9T. CFO Luca Maestri: Capital allocation, $600B+ returned to shareholders. COO Jeff Williams: Supply chain excellence. Strong management team with low turnover.",
+            "charts": []
+        },
+        "business_model": {
+            "title": "Business Model",
+            "content": "Vertically integrated ecosystem: iPhone 52% ($205B), Services 22% ($85B, 70% margins), Mac 10%, iPad 8%, Wearables 8%. 2B+ active devices, 1B+ paid subscriptions. Ecosystem lock-in via hardware/software/services integration. Industry-leading 44% gross margins, 30% operating margins.",
+            "charts": []
+        },
+        "financial_analysis": {
+            "title": "Financial Analysis",
+            "content": "FY2023: Revenue $394B (+3%), Gross Profit $170B (44% margin), Operating Income $115B (30% margin), Net Income $97B (25% margin), FCF $100B. Balance Sheet: Cash $162B, Debt $111B, Net Cash $51B. ROE 160%, ROIC 45%. 3-year revenue CAGR 8%, Services growing 15%+.",
+            "charts": []
+        },
+        "valuation_analysis": {
+            "title": "Valuation Analysis",
+            "content": "DCF Analysis: WACC 8.5%, Terminal growth 3%, Fair Value $195. Multiples: P/E 29.5x (vs 5yr avg 27x), EV/EBITDA 22x, P/FCF 29x. Peer comparison: Premium to MSFT, GOOGL justified by margins and ecosystem. Target Price $200 (8% upside).",
+            "charts": []
+        },
+        "market_analysis": {
+            "title": "Market Analysis",
+            "content": "Smartphone market: 18% share, 75% profit share. Competitors: Samsung, Google, Xiaomi. Tablet: 38% share (dominant). Wearables: 34% smartwatch, 31% earbuds. Services: Competing with Spotify, Netflix, Google. Geographic: Americas 42%, Europe 24%, China 19%, Japan 7%, Asia 8%.",
+            "charts": []
+        },
+        "risk_assessment": {
+            "title": "Risk Assessment",
+            "content": "Key Risks: 1) China concentration (19% revenue) - geopolitical, competition. 2) Regulatory pressure - App Store 30% fee under scrutiny (EU DMA, US DOJ). 3) iPhone dependence (52% revenue) - maturing market. 4) Innovation pace - fewer breakthrough products. 5) Supply chain - Taiwan semiconductor risk. Mitigation: India expansion, services diversification, R&D investment.",
+            "charts": []
+        }
+    },
+    "metadata": {
+        "processing_time": 10,
+        "agent_count": 8,
+        "is_demo": True,
+        "data_source": "Pre-generated AAPL analysis",
+        "pdf_available": True,
+        "pdf_path": "data/demo_report_aapl.pdf"
+    }
+}
+
+# Save to file
+output_path = Path(__file__).parent.parent / "data" / "demo_report_aapl.json"
+output_path.parent.mkdir(exist_ok=True)
+
+with open(output_path, 'w') as f:
+    json.dump(demo_data, f, indent=2)
+
+print(f"✅ Demo data created: {output_path}")

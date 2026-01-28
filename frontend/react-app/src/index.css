@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-blue-800: #1e40af;
+  --color-blue-700: #1d4ed8;
+  --color-blue-600: #2563eb;
+  --color-green-800: #166534;
+  --color-green-700: #15803d;
+  --color-green-600: #16a34a;
+  --color-red-800: #991b1b;
+  --color-red-700: #b91c1c;
+  --color-red-600: #dc2626;
+}
+
+/* Default text colors for different backgrounds */
+body {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+/* Report content specific styles - for light backgrounds */
+.report-content {
+  background-color: white;
+  color: #1f2937 !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.report-content * {
+  color: #1f2937 !important;
+}
+
+/* Dark theme UI elements */
+.bg-gray-800, .bg-gray-900 {
+  color: #f9fafb !important;
+}
+
+.bg-gray-800 *, .bg-gray-900 * {
+  color: #f9fafb !important;
+}
+
+/* Text colors for specific elements */
+.text-white {
+  color: #ffffff !important;
+}
+
+.text-gray-200 {
+  color: #e5e7eb !important;
+}
+
+.text-gray-300 {
+  color: #d1d5db !important;
+}
+
+.text-gray-400 {
+  color: #9ca3af !important;
+}

@@ -1,0 +1,56 @@
+WARNING:services.polishing_service:⚠️ OpenAI polishing service disabled: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+INFO:core.process_manager:🔧 ProcessManager initialized with cleanup handlers
+/mnt/c/kiro/complete_production_system.py:93: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+INFO:     Started server process [123527]
+INFO:     Waiting for application startup.
+INFO:services.database_service:✅ Database service initialized
+INFO:services.enhanced_service:🚀 Enhanced Report Service initialized
+INFO:__main__:🚀 Enhanced services initialized
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+🚀 Starting MarketMind Pro - Complete Production System
+======================================================================
+Production Features:
+  ✅ Real Kiro CLI Agents (8 specialized agents)
+  ✅ Real Financial Data Integration
+  ✅ Professional PDF Generation (30 pages)
+  ✅ WebSocket Real-time Progress Updates
+  ✅ 3-Tier Quality Validation System
+
+API: http://localhost:8000
+WebSocket: ws://localhost:8000/ws
+Docs: http://localhost:8000/docs
+
+INFO:     127.0.0.1:58598 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58614 - "GET /health HTTP/1.1" 200 OK
+INFO:__main__:📝 Report generation request received: DEMO
+INFO:__main__:🆔 Generated report ID: prod_report_DEMO_1769580586
+INFO:     127.0.0.1:58622 - "POST /api/v1/reports/generate HTTP/1.1" 200 OK
+INFO:__main__:🎭 DEMO MODE: Starting for report prod_report_DEMO_1769580586
+INFO:__main__:🎭 DEMO: Loaded demo data with keys: ['report_id', 'ticker', 'company_name', 'title', 'generated_at', 'status', 'quality_score', 'statistics', 'sections', 'chart_data', 'metadata']
+INFO:__main__:🎭 DEMO: statistics = {'total_sections': 9, 'total_words': 8268}
+INFO:__main__:🎭 DEMO: quality_score = 94
+INFO:__main__:🎭 DEMO: generated_at = 2026-01-28T11:06:51.563374
+INFO:__main__:🎭 DEMO: Storing report with:
+INFO:__main__:   statistics: {'total_sections': 9, 'total_words': 8268}
+INFO:__main__:   quality_score: 94
+INFO:__main__:   generated_at: 2026-01-28T14:09:55.153862
+INFO:__main__:   sections count: 9
+INFO:__main__:✅ DEMO MODE: Completed for report prod_report_DEMO_1769580586
+INFO:     127.0.0.1:58148 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54386 - "GET /api/v1/reports/prod_report_DEMO_1769580436 HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [123527]
+INFO:core.process_manager:📡 Received signal 15, initiating cleanup...
+INFO:core.process_manager:🧹 Cleaning up all active processes...
+INFO:core.process_manager:✅ All managed processes cleaned up (user sessions preserved)
+INFO:core.process_manager:🧹 Cleaning up all active processes...
+INFO:core.process_manager:✅ All managed processes cleaned up (user sessions preserved)

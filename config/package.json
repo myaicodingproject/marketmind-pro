@@ -1,0 +1,33 @@
+{
+  "name": "marketmind-pdf-generator",
+  "version": "1.0.0",
+  "description": "Institutional-quality PDF generation for MarketMind Pro using Puppeteer",
+  "main": "app/services/puppeteer_generator.js",
+  "scripts": {
+    "test": "node app/services/puppeteer_generator.js",
+    "install-deps": "npm install",
+    "generate-pdf": "node app/services/puppeteer_generator.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.11.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "keywords": [
+    "pdf",
+    "puppeteer",
+    "report",
+    "generation",
+    "institutional",
+    "finance"
+  ],
+  "author": "MarketMind Pro",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marketmind/pdf-generator"
+  }
+}

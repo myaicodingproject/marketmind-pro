@@ -1,0 +1,397 @@
+/* Print-specific styles for professional institutional reports */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    font-family: 'Times New Roman', 'Georgia', serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #000;
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide interactive elements */
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Remove animations and transforms */
+  .animate-fadeInUp,
+  .animate-slideInRight,
+  .animate-scaleIn,
+  .animate-spin,
+  .animate-pulse {
+    animation: none !important;
+  }
+
+  .transform,
+  .hover\:transform,
+  .hover\:-translate-y-0\.5 {
+    transform: none !important;
+  }
+
+  /* Page setup and breaks */
+  .print\:break-before {
+    page-break-before: always;
+  }
+
+  .print\:break-after {
+    page-break-after: always;
+  }
+
+  .print\:break-inside-avoid {
+    page-break-inside: avoid;
+  }
+
+  /* Page margins and headers */
+  @page {
+    margin: 0.75in 1in;
+    size: letter;
+    
+    @top-left {
+      content: "MarketMind Pro";
+      font-size: 9pt;
+      color: #666;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    @top-center {
+      content: "Institutional Financial Analysis";
+      font-size: 9pt;
+      color: #666;
+      font-family: 'Arial', sans-serif;
+      font-weight: bold;
+    }
+    
+    @top-right {
+      content: "CONFIDENTIAL";
+      font-size: 9pt;
+      color: #666;
+      font-family: 'Arial', sans-serif;
+      font-weight: bold;
+    }
+    
+    @bottom-left {
+      content: "Generated: " attr(data-date);
+      font-size: 8pt;
+      color: #888;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-size: 8pt;
+      color: #888;
+      font-family: 'Arial', sans-serif;
+    }
+    
+    @bottom-right {
+      content: "© MarketMind Pro";
+      font-size: 8pt;
+      color: #888;
+      font-family: 'Arial', sans-serif;
+    }
+  }
+
+  /* First page (cover) styling */
+  @page :first {
+    margin-top: 2in;
+    
+    @top-left, @top-center, @top-right {
+      content: none;
+    }
+  }
+
+  /* Typography adjustments for print */
+  h1 {
+    font-size: 28pt;
+    font-weight: bold;
+    margin-bottom: 18pt;
+    margin-top: 24pt;
+    color: #1f4e79;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    page-break-after: avoid;
+  }
+
+  h2 {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-top: 24pt;
+    margin-bottom: 12pt;
+    color: #1f4e79;
+    border-bottom: 2pt solid #2e75b6;
+    padding-bottom: 6pt;
+    page-break-after: avoid;
+    font-family: 'Arial', sans-serif;
+  }
+
+  h3 {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-top: 18pt;
+    margin-bottom: 9pt;
+    color: #333;
+    page-break-after: avoid;
+    font-family: 'Arial', sans-serif;
+  }
+
+  h4 {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-top: 12pt;
+    margin-bottom: 6pt;
+    color: #444;
+    font-family: 'Arial', sans-serif;
+  }
+
+  p {
+    margin-bottom: 9pt;
+    text-align: justify;
+    orphans: 2;
+    widows: 2;
+  }
+
+  /* Tables for financial data */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12pt 0;
+    page-break-inside: avoid;
+    font-size: 9pt;
+  }
+
+  th, td {
+    border: 1pt solid #ccc;
+    padding: 6pt 8pt;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    font-size: 9pt;
+    color: #1f4e79;
+  }
+
+  tr:nth-child(even) {
+    background-color: #fafbfc;
+  }
+
+  /* Financial metrics styling */
+  .financial-metric {
+    display: flex;
+    justify-content: space-between;
+    padding: 3pt 0;
+    border-bottom: 0.5pt solid #eee;
+  }
+
+  .metric-label {
+    font-weight: normal;
+    color: #666;
+  }
+
+  .metric-value {
+    font-weight: bold;
+    color: #000;
+  }
+
+  /* Charts and images */
+  .chart-container {
+    page-break-inside: avoid;
+    margin: 18pt 0;
+    text-align: center;
+  }
+
+  .chart-title {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-bottom: 6pt;
+    color: #1f4e79;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    page-break-inside: avoid;
+  }
+
+  /* Remove shadows, rounded corners, and gradients */
+  .print\:shadow-none,
+  .shadow-xl,
+  .shadow-lg,
+  .shadow-md {
+    box-shadow: none !important;
+  }
+
+  .print\:rounded-none,
+  .rounded-2xl,
+  .rounded-xl,
+  .rounded-lg {
+    border-radius: 0 !important;
+  }
+
+  .bg-gradient-to-r,
+  .bg-gradient-to-br,
+  .bg-gradient-to-l {
+    background: white !important;
+  }
+
+  /* Ensure proper spacing */
+  .print\:space-y-6 > * + * {
+    margin-top: 18pt;
+  }
+
+  .print\:pb-6 {
+    padding-bottom: 18pt;
+  }
+
+  .print\:text-3xl {
+    font-size: 28pt;
+  }
+
+  .print\:text-xl {
+    font-size: 20pt;
+  }
+
+  /* Corporate branding colors for print */
+  .text-primary-900 {
+    color: #1f4e79 !important;
+  }
+
+  .text-primary-600,
+  .text-primary-700 {
+    color: #2e75b6 !important;
+  }
+
+  .border-primary-200 {
+    border-color: #b9dfff !important;
+  }
+
+  .bg-primary-50 {
+    background-color: #f0f7ff !important;
+  }
+
+  .bg-green-50 {
+    background-color: #f0fdf4 !important;
+  }
+
+  .bg-gray-50 {
+    background-color: #f9fafb !important;
+  }
+
+  /* Ensure backgrounds print correctly */
+  .bg-gray-50,
+  .bg-primary-50,
+  .bg-green-50,
+  .bg-blue-50 {
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Executive summary styling */
+  .executive-summary {
+    background-color: #f8f9fa !important;
+    border: 1pt solid #dee2e6;
+    padding: 12pt;
+    margin: 12pt 0;
+    page-break-inside: avoid;
+  }
+
+  /* Recommendation boxes */
+  .recommendation-box {
+    border: 2pt solid #28a745;
+    background-color: #f8fff9 !important;
+    padding: 12pt;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+
+  .recommendation-buy {
+    color: #155724 !important;
+    font-size: 18pt;
+    font-weight: bold;
+  }
+
+  /* Table of contents */
+  .toc-entry {
+    display: flex;
+    justify-content: space-between;
+    padding: 3pt 0;
+    border-bottom: 0.5pt dotted #ccc;
+  }
+
+  .toc-section {
+    font-weight: normal;
+  }
+
+  .toc-page {
+    font-weight: bold;
+  }
+
+  /* Watermark for confidential documents */
+  .watermark {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 72pt;
+    color: rgba(0, 0, 0, 0.05);
+    z-index: -1;
+    font-weight: bold;
+    pointer-events: none;
+  }
+
+  /* Footer information */
+  .report-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0.5in;
+    background-color: #f8f9fa;
+    border-top: 1pt solid #dee2e6;
+    padding: 6pt 12pt;
+    font-size: 8pt;
+    color: #666;
+  }
+
+  /* Avoid breaking inside important sections */
+  .financial-section,
+  .analysis-section,
+  .recommendation-section {
+    page-break-inside: avoid;
+  }
+
+  /* Ensure proper line height for readability */
+  .report-content {
+    line-height: 1.6;
+  }
+
+  /* Professional list styling */
+  ul, ol {
+    margin: 9pt 0;
+    padding-left: 18pt;
+  }
+
+  li {
+    margin-bottom: 3pt;
+  }
+
+  /* Blockquote styling for important notes */
+  blockquote {
+    margin: 12pt 0;
+    padding: 9pt 12pt;
+    border-left: 3pt solid #2e75b6;
+    background-color: #f0f7ff;
+    font-style: italic;
+  }
+}

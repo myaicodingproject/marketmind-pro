@@ -1,0 +1,140 @@
+INFO:     Started server process [193949]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+🚀 Starting MarketMind Pro - Complete Production System
+======================================================================
+Production Features:
+  ✅ Real Kiro CLI Agents (8 specialized agents)
+  ✅ Real Financial Data Integration
+  ✅ Professional PDF Generation (30 pages)
+  ✅ WebSocket Real-time Progress Updates
+  ✅ 3-Tier Quality Validation System
+
+API: http://localhost:8000
+WebSocket: ws://localhost:8000/ws
+Docs: http://localhost:8000/docs
+
+INFO:     127.0.0.1:49386 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53834 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46306 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46316 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44618 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58788 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57100 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56002 - "GET /api/v1/reports/prod_report_GOOGL_1769350746 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54748 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33114 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38128 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57182 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59376 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40994 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43482 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59718 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47780 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57120 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44674 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54888 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48840 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40624 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59068 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35468 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47584 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41878 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37640 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42626 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53102 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33808 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36514 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49204 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42162 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40388 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60618 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40422 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52638 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36214 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33014 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60454 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47758 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58212 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58126 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44876 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51158 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52354 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50550 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56580 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57702 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44134 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39646 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36598 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41214 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37456 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55278 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60082 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46956 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43140 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38530 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51100 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44350 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57270 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43592 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58750 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40780 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45554 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54056 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45702 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52010 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56176 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42214 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41024 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41876 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33198 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46024 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35988 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57590 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34636 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46494 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45092 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38000 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52966 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54098 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54540 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34962 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49950 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35116 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47244 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55778 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58258 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57646 - "GET /api/v1/reports/prod_report_GOOGL_1769350746 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48860 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38456 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57234 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57238 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57248 - "GET /api/v1/reports/prod_report_GOOGL_1769350746 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33792 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60042 - "GET /api/v1/reports/prod_report_GOOGL_1769350746 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54906 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57922 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57924 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57926 - "GET /api/v1/reports/prod_report_GOOGL_1769350746 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37434 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57442 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53326 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50574 - "GET /api/v1/reports/prod_report_GOOGL_1769350746 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50590 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42096 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48474 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43784 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59044 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35448 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35450 - "POST /api/v1/test-openai HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35460 - "POST /api/v1/generate-enhanced-pdf HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37344 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42358 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57314 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50792 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34648 - "GET /health HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [193949]

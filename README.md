@@ -2,6 +2,16 @@
 
 **The Mind Behind Smart Investing** - Generate comprehensive 25-30 page institutional-quality stock research reports in 5-8 minutes using 100% Kiro CLI AI processing.
 
+## 🎥 Demo Video
+
+**Watch the full demonstration**: [MarketMind Pro Demo Video](https://youtu.be/w2ja4WMTUpw)
+
+**Video Structure** (5:50 total):
+- **0:00 - 5:50**: Product features, architecture, and innovation highlights
+- **5:50 onwards**: Live demo of report generation and features
+
+*Note: The demo video showcases the complete platform including the 30-second DEMO mode, report viewing, PDF export, and all key features.*
+
 ## Overview
 
 MarketMind Pro transforms the $5,000+ institutional analyst experience into an accessible $49/month service for elite retail investors. Our platform generates professional stock research reports with the same depth and quality as Wall Street firms, but in minutes instead of weeks.

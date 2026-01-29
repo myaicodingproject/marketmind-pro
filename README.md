@@ -6,6 +6,22 @@
 
 MarketMind Pro transforms the $5,000+ institutional analyst experience into an accessible $49/month service for elite retail investors. Our platform generates professional stock research reports with the same depth and quality as Wall Street firms, but in minutes instead of weeks.
 
+**Created by**: Marconi Sim  
+**Built for**: Dynamous Kiro Hackathon 2026
+
+### ⚠️ Important Notes for Users
+
+**Token Usage & Processing Time:**
+- MarketMind Pro launches **8 parallel AI agents** for comprehensive research
+- **Actual processing time**: 10-15 minutes for production reports (Demo mode: 30 seconds)
+- **Token consumption**: Significant due to parallel processing and comprehensive analysis
+- **Recommendation**: Monitor your API token usage and costs before generating multiple reports
+
+**Demo Mode:**
+- Use ticker symbol **"DEMO"** for instant demonstration (30 seconds)
+- Pre-generated report showcasing all features without token consumption
+- Perfect for testing and understanding the platform capabilities
+
 ## Key Features
 
 ### 🚀 One-Click Report Generation
@@ -409,6 +425,38 @@ echo $DATABASE_URL
 - **API Docs**: Visit http://localhost:8000/docs for interactive API documentation
 - **Kiro CLI**: Use `kiro-cli --help` for command assistance
 - **Issues**: Open GitHub issue with error details and logs
+
+## Future Roadmap
+
+### Phase 1: Enhanced AI Interaction (Q2 2026)
+**RAG-Powered Interactive Chat**
+- Implement Retrieval-Augmented Generation (RAG) for intelligent report querying
+- Enable users to have interactive sessions with AI about existing report information
+- Context-aware responses based on report content and historical data
+- Natural language queries for specific metrics, trends, and insights
+
+### Phase 2: Real-Time Market Integration (Q3 2026)
+**Live Market Data & Alerts**
+- Real-time stock price updates and market data integration
+- Automated report updates when significant events occur
+- Price target tracking and alert notifications
+- Integration with major financial data providers (Bloomberg, Reuters)
+
+### Phase 3: Portfolio Analytics (Q4 2026)
+**Multi-Stock Portfolio Analysis**
+- Portfolio-level risk assessment and diversification analysis
+- Correlation analysis across holdings
+- Sector exposure and concentration metrics
+- Automated rebalancing recommendations
+
+### Phase 4: Advanced Valuation Models (Q1 2027)
+**Expanded Analytical Capabilities**
+- Multiple valuation methodologies (DDM, Residual Income, APV)
+- Industry-specific valuation models
+- Monte Carlo simulation for scenario analysis
+- Machine learning-powered earnings predictions
+
+---
 
 ## Contributing
 
